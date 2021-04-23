@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles/Home.css" type="text/css">
+  <title>Home</title>
+</head>
+
+<body>
+  <header class="header-container">
+    <div class="row">
+      <div class="titulo">
+        <h1>Comments</h1><img src="/images/logo.png" alt="">
+      </div>
+      <hr />
+
+      <div id="wrapper">
+
+
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+
+          <ul class="sidebar-nav" style="margin-left:0px;">
+            <li class="sidebar-brand">
+              <a href="#menu-toggle" id="menu-toggle" style="margin-top:20px;float:right;"> <i class="fa fa-bars "
+                  style="font-size:17px !Important;" aria-hidden="true" aria-hidden="true"></i>
+            </li>
+            <li>
+
+              <a href="index"> <i class="far fa-comment" style="font-size:15px !Important;" aria-hidden="true"> </i>
+                <span>
+                  New Comment</span> </a>
+            </li>
+            <li>
+              <a href="comments"> <i class="far fa-comments" style="font-size:15px !Important;" aria-hidden="true"> </i>
+                <span>
+                  Comments </span> </a>
+            </li>
+          </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+
+        <!-- Page Content -->
+        <div class="container">
+
+
+          <div class="comments">
+            <h2><b class="nameUser"><%= nome%></b>, Leave a comment below!</h2>
+
+            <div class="comments-form">
+              <form @submit.prevent="handleSubmit" id="formNewComment">
+                <ul>
+                  <li>
+                  </li>
+                  <li>
+                    <textarea class="comment-area" rows="5" cols="40" placeholder="Comment" v-model="comment" required
+                      onKeyDown="textCounter(this.form.message,this.form.remLen,250);"
+                      onKeyUp="textCounter(this.form.message,this.form.remLen,250);"></textarea>
+                  </li>
+                  <li>
+                    <button class="form-btn sx log-in" type="submit">New Comment</button>
+                  </li>
+                </ul>
+              </form>
+            </div>
+          </div>
+          <div>
+
+
+
+
+
+
+            <div id="page-content-wrapper">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg-12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  </div>
+                </div>
+
+
+                <!-- sidebar-js -->
+                <script src="/js/newComment.js"></script>
+                <script src="https://kit.fontawesome.com/7e367a33d5.js" crossorigin="anonymous"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script>
+                  $("#menu-toggle").click(function (e) {
+                    e.preventDefault();
+                    $("#wrapper").toggleClass("toggled");
+                  });
+                </script>
+                <!-- limit-textarea -->
+                <script>
+                  function textCounter(field, countfield, maxlimit) {
+                    if (field.value.length > maxlimit)
+                      field.value = field.value.substring(0, maxlimit);
+                    else
+                      countfield.value = maxlimit - field.value.length;
+                  }
+                </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/loginStyle.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <title>Comments</title>
+</head>
+
+<body>
+  <div class="container">
+    <form class="signIn" id="formSignUp">
+      <h3>Create Your Account</h3>
+      <p>Just enter your email address<br>
+        and your name for join.
+      </p>
+      <input class="w100 seMail" type="email" placeholder="Insert eMail" id="eMail"   autocomplete="off">
+      <input type="name" placeholder="Insert Name" id="name" class="sname"  autocomplete="off">
+     
+      <button class="form-btn sx back" type="button">Back</button>
+      <button class="form-btn dx">Sign Up</button>
+    </form>
+    <form class="signUp" id="formLogIn">
+      <h3>Welcome<br>Back !</h3>
+      <input type="email" placeholder="Insert eMail" id="eMail" class="eMail" autocomplete="off" value="">
+      <input type="text" placeholder="Insert Name" id="name" class="name" value="">
+      <button class="form-btn sx log-in" type="button" >Sing Up</button>
+      <button class="form-btn dx" >Log In</button>
+    </form>
+  </div>
+ 
+<script src="/js/logIn.js"></script>
+<script src="/js/signUp.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script id="rendered-js">
+    $(".log-in").click(function () {
+      $(".signIn").addClass("active-dx");
+      $(".signUp").addClass("inactive-sx");
+      $(".signUp").removeClass("active-sx");
+      $(".signIn").removeClass("inactive-dx");
+    });
+
+    $(".back").click(function () {
+      $(".signUp").addClass("active-sx");
+      $(".signIn").addClass("inactive-dx");
+      $(".signIn").removeClass("active-dx");
+      $(".signUp").removeClass("inactive-sx");
+    });
+  </script>
+
+
+</body>
+
+</html>
